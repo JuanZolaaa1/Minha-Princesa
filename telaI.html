@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minha Princesa❤️</title>
+    <link rel="shortcut icon" type="image/x-icon" href="imagens/Coracao.png">
+    <link rel="stylesheet" href="tela.css">
+</head>
+<body>
+    <header><h1>Minha Princesa❤️</h1></header>
+    <main>
+        <p>Te amo demais <br> Você ilumina meus dias, tira os meus sorrisos mais sinceros, eu te admiro demais, 
+        você é inteligente, forte, focada, bela, cheia de brilho. Sei que às vezes tudo pode parecer meio ruim ou pra baixo,
+        mas quero que você saiba que pode contar comigo para qualquer coisa nessa vida <br>
+        Eu te amoooo muuitoo meu docinho❤️❤️❤️❤️❤️❤️
+        </p>
+        <div id="1" class="foto-principal">
+            <a href="imagens/foto12.jpeg" class="foto-principal-items">
+                <img src="imagens/foto12.jpeg" alt="foto12">
+            </a>
+        </div>
+
+        <div id="hora-ano">
+            <script>
+                // Data atual
+                const dataAtual = new Date();
+                const anoAtual = dataAtual.getFullYear(); // Ano atual em que estamos
+                const anoConhecidos = 2022; // Ano em que se conheceram
+                const anoCon = anoAtual - anoConhecidos; // Quantos anos de conhecidos
+
+                // Data do dia em que se conheceram (20 de julho de 2022)
+                const diaConhecido = new Date('2022-07-20');
+                // Calcular a diferença de dias
+                const diffTime = dataAtual - diaConhecido; // Diferença em milissegundos
+                const dias = Math.floor(diffTime / (1000 * 60 * 60 * 24)); // Converter milissegundos para dias
+
+                // Mostrar a mensagem com os valores calculados
+                document.getElementById("hora-ano").innerHTML = `
+                    <p>Já se fazem ${anoCon} anos, nem parece que foi ${dias} dias isso né amor kkkk <br>
+                    Vivemos intensamente e isso é um dos motivos pelo qual eu te amo tanto, não vejo o tempo passar
+                    quando estou ao seu lado, a vida é mais leve com você meu amor<br>
+                    Te amooo❤️❤️❤️❤️
+                    <br><br>
+                    Espero que goste ❤️</p>
+                `;
+            </script>
+        </div>
+    </main>
+
+    <a href="galeria.html" class="link-foto">
+        <input type="button" value="Fotos❤️" class="botao-foto">
+    </a>
+
+    <footer>
+        <span>Copyright &copy; | Juan Lucas para Giovanna Gomes</span>
+    </footer>
+</body>
+</html>
