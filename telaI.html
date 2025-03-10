@@ -25,25 +25,35 @@
             <script>
                 // Data atual
                 const dataAtual = new Date();
-                const anoAtual = dataAtual.getFullYear(); // Ano atual em que estamos
+                const anoAtual = dataAtual.getFullYear(); // Ano atual
                 const anoConhecidos = 2022; // Ano em que se conheceram
                 const anoCon = anoAtual - anoConhecidos; // Quantos anos de conhecidos
 
-                // Data do dia em que se conheceram (20 de julho de 2022)
                 const diaConhecido = new Date('2022-07-20');
-                // Calcular a diferença de dias
+ 
                 const diffTime = dataAtual - diaConhecido; // Diferença em milissegundos
                 const dias = Math.floor(diffTime / (1000 * 60 * 60 * 24)); // Converter milissegundos para dias
 
-                // Mostrar a mensagem com os valores calculados
-                document.getElementById("hora-ano").innerHTML = `
-                    <p>Já se fazem ${anoCon} anos, nem parece que foi ${dias} dias isso né amor kkkk <br>
-                    Vivemos intensamente e isso é um dos motivos pelo qual eu te amo tanto, não vejo o tempo passar
-                    quando estou ao seu lado, a vida é mais leve com você meu amor<br>
-                    Te amooo❤️❤️❤️❤️
-                    <br><br>
-                    Espero que goste ❤️</p>
-                `;
+                function atualizarTimer() {
+                    const dataAtual = new Date();
+                    const diffTime = dataAtual - diaConhecido; // Diferença em milissegundos
+                    const dias = Math.floor(diffTime / (1000 * 60 * 60 * 24)); // Dias
+                    const horas = Math.floor((diffTime % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)); // Horas
+                    const minutos = Math.floor((diffTime % (1000 * 60 * 60)) / (1000 * 60)); // Minutos
+                    const segundos = Math.floor((diffTime % (1000 * 60)) / 1000); // Segundos
+
+                    document.getElementById("hora-ano").innerHTML = `
+                        <p><br>Já se fazem ${anoCon} anos <strong>${dias} dias</strong>, <strong>${horas} horas</strong>, <strong>${minutos} minutos</strong> e <strong>${segundos} segundos</strong> desde que nos conhecemos. ❤️<br>
+                        Vivemos intensamente e isso é um dos motivos pelo qual eu te amo tanto, não vejo o tempo passar
+                        quando estou ao seu lado, a vida é mais leve com você meu amor<br>
+                        Te amooo❤️❤️❤️❤️
+                        <br><br>
+                        Espero que goste ❤️</p>
+                    `;
+                }
+
+                // Atualizar o timer a cada 1 segundo
+                setInterval(atualizarTimer, 1000);
             </script>
         </div>
     </main>
