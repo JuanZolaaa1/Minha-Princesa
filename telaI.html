@@ -23,27 +23,26 @@
 
         <div id="hora-ano">
             <script>
-                // Data atual
-                const dataAtual = new Date();
-                const anoAtual = dataAtual.getFullYear(); // Ano atual
-                const anoConhecidos = 2022; // Ano em que se conheceram
-                const anoCon = anoAtual - anoConhecidos; // Quantos anos de conhecidos
-
-                const diaConhecido = new Date('2022-07-20');
- 
-                const diffTime = dataAtual - diaConhecido; // Diferença em milissegundos
-                const dias = Math.floor(diffTime / (1000 * 60 * 60 * 24)); // Converter milissegundos para dias
+                // Definir a data completa de quando se conheceram: 20 de agosto de 2022
+                const dataConhecidos = new Date('2022-08-20T22:00:00'); // Data e hora específicas
 
                 function atualizarTimer() {
                     const dataAtual = new Date();
-                    const diffTime = dataAtual - diaConhecido; // Diferença em milissegundos
-                    const dias = Math.floor(diffTime / (1000 * 60 * 60 * 24)); // Dias
+                    const diffTime = dataAtual - dataConhecidos; // Diferença em milissegundos
+                    
+                    // Calcular o tempo em anos, meses, dias, horas, minutos e segundos
+                    const anos = Math.floor(diffTime / (1000 * 60 * 60 * 24 * 365)); // Calcular anos
+                    const meses = Math.floor(diffTime / (1000 * 60 * 60 * 24 * 30)) % 12; // Calcular meses
+                    const dias = Math.floor(diffTime / (1000 * 60 * 60 * 24)) % 30; // Calcular dias
                     const horas = Math.floor((diffTime % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)); // Horas
                     const minutos = Math.floor((diffTime % (1000 * 60 * 60)) / (1000 * 60)); // Minutos
                     const segundos = Math.floor((diffTime % (1000 * 60)) / 1000); // Segundos
 
+                    // Exibir as informações de tempo no HTML
                     document.getElementById("hora-ano").innerHTML = `
-                        <p><br>Já se fazem ${anoCon} anos <strong>${dias} dias</strong>, <strong>${horas} horas</strong>, <strong>${minutos} minutos</strong> e <strong>${segundos} segundos</strong> desde que nos conhecemos. ❤️<br>
+                        <p><br>Já se passaram <strong>${anos} anos</strong>, <strong>${meses} meses</strong>, <strong>${dias} dias</strong>, 
+                        <strong>${horas} horas</strong>, <strong>${minutos} minutos</strong> e <strong>${segundos} segundos</strong> 
+                        desde que nos conhecemos. ❤️<br>
                         Vivemos intensamente e isso é um dos motivos pelo qual eu te amo tanto, não vejo o tempo passar
                         quando estou ao seu lado, a vida é mais leve com você meu amor<br>
                         Te amooo❤️❤️❤️❤️
