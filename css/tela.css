@@ -1,0 +1,154 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: cursive;
+  background: linear-gradient(-60deg, #000000, rgb(189, 6, 6), rgb(70, 3, 70));
+}
+
+header h1 {
+  text-align: center;
+  margin: 2.8rem;
+  color: #fff;
+  border-bottom: 1px solid black;
+}
+
+main {
+  text-align: center;
+  margin: 1rem;
+}
+
+span {
+  font-size: 2.5rem;
+  color: pink;
+}
+
+p {
+  color: #ffffffd2;
+  font-size: 1.6rem;
+  margin-bottom: 1.8rem;
+  word-spacing: 1rem;
+}
+
+label {
+  color: pink;
+}
+
+#foto {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin: 2rem;
+}
+
+#foto img {
+  border-radius: 1rem;
+  align-items: center;
+  max-width: 500px;
+  max-height: 500px;
+  border: 10px solid black;
+  opacity: 1;
+  transition: 0.9s;
+}
+
+#foto img.troca {
+  opacity: 0.5;
+}
+
+/* #volta {
+  width: 0;
+  height: 0;
+  background: transparent;
+  border-top: 12px solid transparent;
+  border-bottom: 12px solid transparent;
+  border-right: 30px solid #ff3d6f;
+  border-left: 0;
+  cursor: pointer;
+  transition: 0.5s;
+  margin: 1rem;
+}
+
+#volta:hover {
+  border-right: 30px solid #d0395f;
+  box-shadow: 2px 0 0 0 black;
+}
+
+#avanco {
+  width: 0;
+  height: 0;
+  background: transparent;
+  border-top: 12px solid transparent;
+  border-bottom: 12px solid transparent;
+  border-left: 30px solid #ff3d6f;
+  border-right: 0;
+  cursor: pointer;
+  transition: 0.5s;
+  margin: 1rem;
+  opacity: 1;
+}
+
+#avanco:hover {
+  border-left: 30px solid #d0395f;
+  box-shadow: -2px 0 0 black;
+  opacity: 1;
+} */
+
+/* botao da galeria */
+.link-foto {
+  width: 200px;
+  height: 50px;
+  border-radius: 1rem;
+  font-size: 1.7rem;
+  background-color: red;
+  color: #3c3b3b;
+  cursor: pointer;
+  transition: 0.4s;
+}
+
+.link-foto:hover {
+  background-color: rgba(161, 6, 6, 0.812);
+  box-shadow: 2px 2px 2px 2px black;
+  color: #ddd;
+}
+
+/* rodape */
+footer {
+  width: 100%;
+  font-size: 20px;
+  margin-top: 2rem;
+}
+
+#rodape{
+  padding-left: 1rem;
+  padding-bottom: 0.3rem;
+  color: #000;
+  font-size: 15px;
+  word-spacing: normal;
+  margin-bottom: 0;
+  color: rgb(235, 177, 187);
+}
+
+/*Responsividade*/
+@media(max-width: 450px) {
+  header h1{
+    font-size: 2.5rem;
+  }
+
+  p {
+    margin: 2rem;
+  }
+
+  .link-foto{
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+  }
+
+  #foto img {
+    max-width: 100%;
+    max-height: 100%;
+  }
+}
