@@ -39,7 +39,7 @@ function CarocelImag() {
      if (i > 15) {
        i = 1;
      }
-    imagem.src = `img/foto${i}.jpeg`;
+    imagem.src = `./img/foto${i}.jpeg`;
     imagem.classList.remove("troca");
   }, 700);
 };
