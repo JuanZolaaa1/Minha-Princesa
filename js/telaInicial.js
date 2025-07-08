@@ -12,22 +12,47 @@ const imagem = document.querySelector("#foto img");
 
 const atualizarTimer = () => {
   const dataAtual = new Date();
-  const diffTime = dataAtual - dataConhecidos;
-  const ano = Math.floor(diffTime / (1000 * 60 * 60 * 24 * 365));
-  const mes = Math.floor(diffTime / (1000 * 60 * 60 * 24 * 30)) % 12;
-  const dia = Math.floor(diffTime / (1000 * 60 * 60 * 24)) % 30;
-  const hora = Math.floor(
-    (diffTime % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
-  );
-  const minuto = Math.floor((diffTime % (1000 * 60 * 60)) / (1000 * 60));
-  const segundo = Math.floor((diffTime % (1000 * 60)) / 1000);
+  let anosVal = dataAtual.getFullYear() - dataConhecidos.getFullYear();
+  let mesesVal = dataAtual.getMonth() - dataConhecidos.getMonth();
+  let diasVal = dataAtual.getDate() - dataConhecidos.getDate();
+  let horasVal = dataAtual.getHours() - dataConhecidos.getHours();
+  let minutosVal = dataAtual.getMinutes() - dataConhecidos.getMinutes();
+  let segundosVal = dataAtual.getSeconds() - dataConhecidos.getSeconds();
 
-  anos.innerHTML = ano;
-  meses.innerHTML = mes;
-  dias.innerHTML = dia;
-  horas.innerHTML = hora;
-  minutos.innerHTML = minuto;
-  segundos.innerHTML = segundo;
+  mesesVal += 1;
+
+  if (segundosVal < 0) {
+    segundosVal += 60;
+    minutosVal--;
+  }
+  if (minutosVal < 0) {
+    minutosVal += 60;
+    horasVal--;
+  }
+  if (horasVal < 0) {
+    horasVal += 24;
+    diasVal--;
+  }
+  if (diasVal < 0) {
+    const ultimoDiaMesAnterior = new Date(
+      dataAtual.getFullYear(),
+      dataAtual.getMonth(),
+      0
+    ).getDate();
+    diasVal += ultimoDiaMesAnterior;
+    mesesVal--;
+  }
+  if (mesesVal < 0) {
+    mesesVal += 12;
+    anosVal--;
+  }
+
+  anos.innerHTML = anosVal;
+  meses.innerHTML = mesesVal;
+  dias.innerHTML = diasVal;
+  horas.innerHTML = horasVal;
+  minutos.innerHTML = minutosVal;
+  segundos.innerHTML = segundosVal;
 };
 
 setInterval(atualizarTimer, 100);
@@ -36,13 +61,13 @@ function CarocelImag() {
   i++;
   imagem.classList.add("troca");
   setTimeout(() => {
-     if (i > 15) {
-       i = 1;
-     }
+    if (i > 15) {
+      i = 1;
+    }
     imagem.src = `./img/foto${i}.jpeg`;
     imagem.classList.remove("troca");
   }, 700);
-};
+}
 
 setInterval(CarocelImag, 3000);
 
