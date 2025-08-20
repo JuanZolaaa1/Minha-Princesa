@@ -19,8 +19,7 @@ const atualizarTimer = () => {
   let minutosVal = dataAtual.getMinutes() - dataConhecidos.getMinutes();
   let segundosVal = dataAtual.getSeconds() - dataConhecidos.getSeconds();
 
-  mesesVal += 1;
-
+  diasVal += 1;
   if (segundosVal < 0) {
     segundosVal += 60;
     minutosVal--;
